@@ -1,3 +1,9 @@
+import MusicPlayer from "@/components/musicPlayer";
+
 export default function Home() {
-  return <div></div>
+  return (
+      <div>
+          <MusicPlayer/>
+      </div>
+  )
 }
