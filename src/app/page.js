@@ -7,9 +7,11 @@ export default function Home() {
 
   return (
     <main>
+      <div className="flex flex-col gap-4 pl-4 pt-4">
       <Slider heading={'songs'} arr={dummyArray} />
       <Slider heading={'playlist'} arr={dummyArray} />
       <Slider heading={'albums'} arr={dummyArray} />
+      </div>
     </main>
   )
 }

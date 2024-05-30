@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Slider({ heading, arr }) {
     return (
-        <article className="flex flex-col gap-4 pl-4 pt-4">
+        <article className="flex flex-col gap-4">
             <h2 className="font-bold text-3xl capitalize">{heading}</h2>
             <div className="flex gap-2 overflow-x-scroll">
                 {arr.map((track, index) => {
