@@ -10,8 +10,8 @@ export default function Slider({ heading, arr }) {
                 {arr.map((track, index) => {
                     return (
                         <div key={index} className="min-w-[150px] text-center">
-                            <Image src='/kendrick.webp' alt="image" className="w-full object-cover" height={150} width={150} />
-                            <span className="font-bold text-lg">{track}</span>
+                            <Image src='/kendrick.webp' alt="image" className="object-cover w-full rounded-lg" height={100} width={100} />
+                            <span className="font-bold text-lg text-[#E5D4ED]">{track}</span>
                         </div>
                     )
                 })}
