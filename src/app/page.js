@@ -1,9 +1,9 @@
-import artistInfo from "@/components/artistInfo";
+import ArtistInfo from "@/components/artistInfo";
 
 export default function Home() {
   return (
       <div>
-          <artistInfo/>
+          <ArtistInfo/>
       </div>
   )
 }

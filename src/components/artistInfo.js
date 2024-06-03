@@ -1,6 +1,6 @@
 "use client"
 
-export default function artistInfo() {
+export default function ArtistInfo() {
   return (
     <h1>test1234</h1>
   )
