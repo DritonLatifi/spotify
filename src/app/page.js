@@ -1,9 +1,8 @@
-// import MusicPlayer from "@/components/musicplayer.js";
-import artistInfo from "@components/artistInfo.js";
+import artistInfo from "@/components/artistInfo";
+
 export default function Home() {
   return (
       <div>
-          {/* <MusicPlayer/> */}
           <artistInfo/>
       </div>
   )
