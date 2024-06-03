@@ -1,4 +1,3 @@
-import MusicPlayer from "@/components/musicPlayer";
 import "@/app/globals.css"
 
 export default function RootLayout({ children }) {
