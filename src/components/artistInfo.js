@@ -1,7 +1,13 @@
 "use client"
 
 export default function ArtistInfo() {
+
   return (
-    <h1>test1234</h1>
+    <div>
+      <h1 class="artistTitle">Artist: </h1>
+      <p class="listeners">Listeners: </p>
+      <p class="follows">Follows: </p>
+      <p class="followers">Followers: </p>
+    </div>
   )
 }
