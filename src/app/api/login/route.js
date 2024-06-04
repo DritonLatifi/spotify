@@ -15,11 +15,7 @@ export async function GET(req) {
 
     const data = await res.json()
 
-    console.log(data);
-
     cookieStore.set('token', data.access_token)
-
-    console.log(cookieStore.get('token'));
 
     return NextResponse.json({ data })
 }
