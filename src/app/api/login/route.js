@@ -1,17 +1,11 @@
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-
-const { cookies } = require("next/headers")
-
-export const dynamic = 'force-dynamic'
 
 export async function GET(req) {
     const cookieStore = cookies()
-
     const searchParams = req.nextUrl.searchParams
 
-    console.log(searchParams.code);
-
-    const res = await fetch(`https://accounts.spotify.com/api/token?code=${searchParams.code}&redirect_uri=${process.env.REDIRECT_URI}&grant_type=authorization_code`, {
+    const res = await fetch(`https://accounts.spotify.com/api/token?code=${searchParams.get('code')}&redirect_uri=${process.env.REDIRECT_URI}&grant_type=authorization_code`, {
         method: 'POST',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
@@ -20,6 +14,12 @@ export async function GET(req) {
     })
 
     const data = await res.json()
+
+    console.log(data);
+
+    cookieStore.set('token', data.access_token)
+
+    console.log(cookieStore.get('token'));
 
     return NextResponse.json({ data })
 }
