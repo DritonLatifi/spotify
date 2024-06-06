@@ -1,5 +1,6 @@
 "use client"
 
+import { redirect } from "next/navigation"
 import { useEffect } from "react"
 
 export default function Callback({ searchParams }) {
@@ -10,7 +11,7 @@ export default function Callback({ searchParams }) {
     }, [])
 
 
-    // redirect('/')
+    redirect('/')
 
     return null
 }
