@@ -15,7 +15,11 @@ export async function GET(req) {
 
     const data = await res.json()
 
-    cookieStore.set('token', data.access_token)
+    if(!data.access_token){
+        return NextResponse.json({message: `Error getting access token: ${data.error}`})
+    }
+
+    cookieStore.set("token", data.access_token)
 
     return NextResponse.json({ data })
 }
