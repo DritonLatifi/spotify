@@ -2,6 +2,7 @@
 import {useEffect, useState} from "react";
 import { FaCirclePlay , FaCirclePause} from "react-icons/fa6";
 import { MdReplayCircleFilled } from "react-icons/md";
+import Cookies from "cookies-js"
 
 let song = {
     artist: "Kendrick Lamar",
@@ -18,9 +19,11 @@ let image = {
 export default function MusicPlayer(){
     const [isPlaying, setIsPlaying] = useState(false)
     const [progress, setProgress] = useState(0)
+    const [player, setPlayer] = useState(null)
 
     function pausePlay(){
         setIsPlaying(!isPlaying)
+        player.togglePlay()
 
         if(progress === song.lengthInSeconds){
             setProgress(0)
@@ -42,10 +45,45 @@ export default function MusicPlayer(){
 
     
     useEffect(() => {
-        if(progress == song.lengthInSeconds){
+        if(progress === song.lengthInSeconds){
             setIsPlaying(false)
         }
     }, [progress])
+
+
+
+useEffect(() => {
+
+    const script = document.createElement("script");
+    script.src = "https://sdk.scdn.co/spotify-player.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    window.onSpotifyWebPlaybackSDKReady = () => {
+        console.log(Cookies.get("token"))
+
+        const player = new window.Spotify.Player({
+            name: 'Web Playback SDK',
+            getOAuthToken: cb => { cb(Cookies.get("token")); },
+            volume: 0.5
+        });
+
+        setPlayer(player);
+
+        player.addListener('ready', ({ device_id }) => {
+            console.log('Ready with Device ID', device_id);
+        });
+
+        player.addListener('not_ready', ({ device_id }) => {
+            console.log('Device ID has gone offline', device_id);
+        });
+
+
+        player.connect();
+
+    };
+}, []);
 
 
     return (
