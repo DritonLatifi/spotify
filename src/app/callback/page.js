@@ -15,7 +15,7 @@ export default function Callback({ searchParams }) {
             })
     }, [])
 
-    // router.push('/')
+    router.push('/')
 
     return null
 }
