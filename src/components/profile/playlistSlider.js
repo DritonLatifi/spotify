@@ -1,6 +1,6 @@
 "use client";
 
-import Slider from "@/components/slider";   
+import Slider from "@/components/profile/slider";   
 
 const artistPlaylists = [
   { title: "Humbleeeee", cover: "/kendrick.webp" },

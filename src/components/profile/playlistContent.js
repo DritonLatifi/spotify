@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Song from "./song";
+import Song from "@components/profile/song";
 
 // Get the playlist from the API and somehow put song info here
 const playList = [
