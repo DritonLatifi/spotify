@@ -11,11 +11,11 @@ const playList = [
     duration: "4:30",
     cover: "/Kendrick.webp",
   },
-  { 
-    title: "Song 2", 
-    artist: "BLUR", 
+  {
+    title: "Song 2",
+    artist: "BLUR",
     duration: "2:01",
-    cover: "/S2.jpg" 
+    cover: "/S2.jpg",
   },
   {
     title: "Heads Will Roll",
@@ -28,14 +28,24 @@ const playList = [
 export default function PlaylistContent() {
   return (
     <>
-      <div className="">
-        {/* Playlist title should be displayed here */}
-        <h1 className="float-center display-block flex justify-left items-center mt-8 ml-[10%] text-lg font-semibold">
-          My Playlist 12
-        </h1>
-      </div>
+      <div className="flex justify-between items-center mt-4 ml-0 relative w-full">
+  {/* Playlist title should be displayed here */}
+  <h1 className="text-2xl font-bold">My Playlist 12</h1>
+  <button className="ml-auto p-2 pr-5" aria-label="Close">
+    <Image
+      src="/close_icon.webp"
+      height={30}
+      width={30}
+      alt="Close button"
+    />
+  </button>
+  <div className="absolute bottom-0 left-0 right-0 w-full h-[2px] bg-gray-600 shadow"></div>
+</div>
+
+
+
       {/* displays the cover the user has chosen for their playlist */}
-      <div className="flex justify-center items-center mt-8 pb-10">
+      <div className="flex justify-center items-center pb-10">
         <Image
           src="/playlist_Cover_Example.jpg"
           width={200}
