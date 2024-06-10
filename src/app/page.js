@@ -5,9 +5,9 @@ import PlaylistContent from "@/components/playlistContent";
 export default function Home() {
   return (
     <div>
-      <body className="bg-[#6B6783]">
+      <main>
         <PlaylistContent />
-      </body>
+      </main>
     </div>
   );
 }
