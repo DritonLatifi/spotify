@@ -1,31 +1,25 @@
 "use client";
 
 import ArtistInfo from "@/components/artistInfo";
-import ArtistSongs from "@/components/artistSongs";
-import SongInPlaylist from "@/components/songInPlaylist";
+import ProfilePlaylist from "@/components/profilePlaylists";
 import AlbumSlider from "@/components/albumSlider";
 import PlaylistSlider from "@/components/playlistSlider";
 
 export default function Home() {
-  const artistAlbums = new Array(5).fill('Album1');
-  const artistSongs = new Array(5).fill('Song1');
 
   return (
-    <main className="bg-[#6B6783]">
+    <main className="bg-[#6B6783] font-sans">
       <div>
         <ArtistInfo />
       </div>
       <div>
-        <ArtistSongs />
+        <ProfilePlaylist />
       </div>
       <div>
-        <SongInPlaylist />
+        <AlbumSlider />
       </div>
       <div>
-        <AlbumSlider albums={artistAlbums} />
-      </div>
-      <div>
-      <PlaylistSlider playlists={artistSongs} />
+      <PlaylistSlider />
       </div>
     </main>
   );
