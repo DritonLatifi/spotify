@@ -1,9 +1,13 @@
 "use client"
 
 import { useEffect } from "react"
+import { useRouter } from 'next/navigation'
+
 import Cookies from "cookies-js"
 
 export default function Callback({ searchParams }) {
+    const router = useRouter()
+
     useEffect(() => {
         fetch('api/login?code=' + searchParams.code)
             .then(res => res.json())
@@ -31,6 +35,7 @@ export default function Callback({ searchParams }) {
     }
 
 
+    // router.push('/')
 
     return null
 }
