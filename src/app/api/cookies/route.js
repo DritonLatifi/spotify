@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server"
 import { cookies } from "next/headers"
 
-const cookieStore = cookies()
-
 export async function POST(req) {
+    const cookieStore = cookies()
 
     const searchParams = req.nextUrl.searchParams
 
@@ -19,10 +18,4 @@ export async function POST(req) {
     console.log(res)
 
     return NextResponse.json({})
-}
-
-export async function GET() {
-    const cookie = cookieStore.get('token')
-
-    return NextResponse.json({cookie})   
 }
