@@ -10,8 +10,8 @@ export default function Slider({ heading, arr }) {
                 {arr && arr.map((item, index) => {
                     return (
                         <div key={index} className="min-w-[200px] text-center overflow-x-hidden">
-                            <Image src={item.track ? item.track.album.images[0].url : item.images[0].url} alt="image" className="object-cover w-full rounded-lg" height={100} width={100} />
-                            <span className="font-bold text-lg whitespace-nowrap capitalize">{item.track ? item.track.name.toLowerCase() : item.name}</span>
+                            <Image src={item.image} alt="image" className="object-cover w-full rounded-lg" height={100} width={100} />
+                            <span className="font-bold text-lg whitespace-nowrap capitalize">{item.name.toLowerCase()}</span>
                         </div>
                     )
                 })}
