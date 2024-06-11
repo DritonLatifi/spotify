@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const dummyArray = new Array(5).fill('Kendrick Lamar')
   const [popular, setPopular] = useState([])
+  const [albums, setAlbums] = useState([])
 
   useEffect(() => {
     if (!getToken()) return
@@ -15,6 +16,10 @@ export default function Home() {
     fetch('api/top-songs?limit=' + 10)
       .then(res => res.json())
       .then(data => setPopular(data.items))
+
+    fetch('api/top-albums')
+      .then(res => res.json())
+      .then(data => setAlbums(data.albums.items))
 
   }, [])
 
@@ -31,7 +36,7 @@ export default function Home() {
   const Main = () => {
     return <div className="flex flex-col gap-6 pl-4 pt-4">
       <Slider heading={'songs'} arr={popular} />
-      {/* <Slider heading={'playlist'} arr={dummyArray} /> */}
+      <Slider heading={'albums'} arr={albums} />
       {/* <Slider heading={'albums'} arr={dummyArray} /> */}
     </div>
   }
