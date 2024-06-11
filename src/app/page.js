@@ -1,4 +1,4 @@
-import CloseButton from "@/components/profile/closeButton";
+// import CloseButton from "@/components/profile/closeButton";
 import Footer from "@/components/footer";
 import ArtistInfo from "@/components/profile/artistInfo";
 import ProfilePlaylist from "@/components/profile/profilePlaylists";
@@ -9,9 +9,9 @@ import MusicPlayer from "@/components/musicPlayer";
 export default function Home() {
   return (
     <div className="flex flex-col h-screen overflow-hidden  bg-[#6B6783] font-sans ">
-      <header>
+      {/* <header>
         <CloseButton />
-      </header>
+      </header> */}
       <main className="flex-1 flex flex-col overflow-y-scroll">
         <div className="flex-1 min-h-screen">
           <ArtistInfo />

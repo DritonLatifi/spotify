@@ -3,7 +3,7 @@ import { FaPlay } from "react-icons/fa";
 
 export default function Slider({ heading, arr }) {
     return (
-        <article className="pl-4 pr-4 flex flex-col gap-4">
+        <article className="pl-[5%] pr-4 flex flex-col gap-4">
             <h2 className="font-bold text-3xl capitalize">{heading}</h2>
             <div className="flex gap-2 overflow-x-scroll">
                 {arr.map((track, index) => {
