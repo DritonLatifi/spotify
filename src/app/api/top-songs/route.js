@@ -10,6 +10,7 @@ export async function GET(req) {
             Authorization: 'Bearer ' + cookieStore.get('token').value
         }
     })
+
     const data = await res.json()
 
     return NextResponse.json(data)
