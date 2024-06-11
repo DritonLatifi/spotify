@@ -14,7 +14,7 @@ export default function ArtistInfo() {
     <>
       <div className="bg-[#6B6783] flex flex-row gap-5 p-5">
         <Image src='/kendrick.webp' alt='image'
-          className="" height={100} width={100} />
+          className="object-cover rounded-lg" height={100} width={100} />
         <div>
           <h1 className="font-bold text-3xl capitalize">{ArtistStuff.artistname}</h1>
           <p className="text-base">{ArtistStuff.listeners}</p>

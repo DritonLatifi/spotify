@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { FaPlay } from "react-icons/fa";
 
 export default function Song({ song }) {
-
   return (
-    <div className="flex items-center p-4 pl-[10%] space-x-4 border-b border-gray-200">
+    <div className="flex items-center p-4 pl-[10%] space-x-4 song-container hover:bg-[#555268] hover:bg-opacity-20">
       <div className="flex-shrink-0">
         <Image
           src={song.cover}
@@ -19,14 +19,9 @@ export default function Song({ song }) {
         <div className="text-sm text-gray-600">{song.artist}</div>
         <div className="text-sm text-gray-600">{song.duration}</div>
       </div>
-      <button className="flex-shrink-0 p-2" aria-label="Play">
-        <Image
-          src="/play-button.png"
-          height={30}
-          width={30}
-          alt="Play button"
-        />
-      </button>
+      <div>
+        <FaPlay size={25} onClick={() => console.log('play song clicked')}/>
+      </div>
     </div>
   );
 }

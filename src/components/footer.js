@@ -1,17 +1,17 @@
 "use client";
 
 import { TiHomeOutline } from "react-icons/ti";
-import { CiSearch } from "react-icons/ci";
+import { IoSearch } from "react-icons/io5";
 import { PiPlaylistDuotone } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 flex justify-between p-4 bg-[#403d4e] text-black">
-      <TiHomeOutline size={30} />
-      <CiSearch size={30} />
-      <PiPlaylistDuotone size={30} />
-      <CgProfile size={30} />
+    <footer className="flex justify-between p-4 bg-[#555268] text-black opacity-80">
+      <TiHomeOutline size={30} onClick={() => console.log('Home clicked')}/>
+      <IoSearch size={30} onClick={() => console.log('Search clicked')}/>
+      <PiPlaylistDuotone size={30} onClick={() => console.log('Playlist clicked')}/>
+      <CgProfile size={30} onClick={() => console.log('Profile clicked')}/>
     </footer>
   );
 }

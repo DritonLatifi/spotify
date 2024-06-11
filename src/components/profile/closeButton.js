@@ -8,10 +8,11 @@ export default function CloseButton() {
   };
 
   return (
-    <div>
+    <div className="bg-[#555268] h-10 flex items-center justify-between px-4 opacity-30">
+      <span></span>
       <button
         onClick={handleClose}
-        className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full hover:bg-gray-300"
+        className="flex items-center justify-center w-8 h-8 rounded-full"
       >
         <IoMdClose size={24} />
       </button>

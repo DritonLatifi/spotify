@@ -1,19 +1,19 @@
 "use client";
 
-import Slider from "@/components/profile/slider";   
+import Slider from "@/components/profile/slider";
 
 const artistPlaylists = [
   { title: "Humbleeeee", cover: "/kendrick.webp" },
-  { title: "Song2", cover: "/kendrick.webp" },
-  { title: "Song3", cover: "/kendrick.webp" }, 
-  { title: "song4", cover: "/kendrick.webp" }, 
-  { title: "song5", cover: "/kendrick.webp" }  
+  { title: "Playlist2", cover: "/kendrick.webp" },
+  { title: "Playlist3", cover: "/kendrick.webp" },
+  { title: "Playlist4", cover: "/kendrick.webp" },
+  { title: "Playlist5", cover: "/kendrick.webp" }
 ];
 
 export default function PlaylistSlider() {
   return (
     <div>
-      <Slider heading={'playlists'} arr={artistPlaylists} /> 
+      <Slider heading={'playlists'} arr={artistPlaylists} />
     </div>
   );
 }

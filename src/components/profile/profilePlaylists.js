@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Song from "@/components/profile/song";
 
 // Get the playlist from the API and somehow put song info here
@@ -11,11 +10,11 @@ const playList = [
     duration: "4:30",
     cover: "/kendrick.webp",
   },
-  { 
-    title: "Song 2", 
-    artist: "BLUR", 
+  {
+    title: "Song 2",
+    artist: "BLUR",
     duration: "2:01",
-    cover: "/kendrick.webp" 
+    cover: "/kendrick.webp"
   },
   {
     title: "Heads Will Roll",
@@ -29,7 +28,6 @@ export default function ProfilePlaylist() {
 
   return (
     <>
-      {/* Songs list */}
       <div className="space-y-4">
         {playList.map((song, index) => {
           return <Song key={index} song={song} />;
