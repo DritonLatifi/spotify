@@ -1,17 +1,23 @@
-"use client"
-
-import Slider from "@/components/slider";
+import Footer from "@/components/footer";
+import AlbumSlider from "@/components/Homepage/albumSlider";
+import PlaylistSlider from "@/components/Homepage/playlistSlider";
+import MusicPlayer from "@/components/musicPlayer";
+import SongSlider from "@/components/Homepage/songSlider.js";
 
 export default function Home() {
-  const dummyArray = new Array(5).fill('Kendrick Lamar')
-
   return (
-    <main className="bg-[#6B6783]">
-      <div className="flex flex-col gap-6 pl-4 pt-4">
-        <Slider heading={'songs'} arr={dummyArray} />
-        <Slider heading={'playlist'} arr={dummyArray} />
-        <Slider heading={'albums'} arr={dummyArray} />
-      </div>
-    </main>
-  )
+    <div className="flex flex-col h-screen overflow-hidden  bg-[#6B6783] font-sans ">
+      <main className="flex-1 flex flex-col overflow-y-scroll">
+        <div className="flex-1 min-h-screen">
+          <SongSlider />
+          <PlaylistSlider />
+          <AlbumSlider />
+        </div>
+      </main>
+      <footer>
+        <MusicPlayer />
+        <Footer />
+      </footer>
+    </div>
+  );
 }
