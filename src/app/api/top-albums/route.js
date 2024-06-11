@@ -12,9 +12,7 @@ export async function GET(req) {
 
     const data = await res.json()
 
-    console.log(data.albums.items.map(obj => {
+    return NextResponse.json(data.albums.items.map(obj => {
         return { type: 'album', name: obj.name, image: obj.images[0].url }
-    }));
-
-    return NextResponse.json({data})
+    }))
 }

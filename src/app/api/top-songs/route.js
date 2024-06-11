@@ -14,6 +14,6 @@ export async function GET(req) {
     const data = await res.json()
 
     return NextResponse.json(data.items.map(obj => {
-        return { type: 'track', name: obj.track.name, populartiy: obj.track.popularity, duration: obj.track.duration_ms }
+        return { type: 'track', name: obj.track.name, populartiy: obj.track.popularity, duration: obj.track.duration_ms, image: obj.track.album.images[0].url }
     }))
 }
