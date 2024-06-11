@@ -13,5 +13,9 @@ export async function GET(req) {
 
     const data = await res.json()
 
-    return NextResponse.json(data)
+    const test = await data.items.map(obj => {
+        return { name: obj.track.name, populartiy: obj.track.popularity, duration: obj.track.duration_ms, artists: obj.track.artists }
+    })
+
+    return NextResponse.json(test)
 }
