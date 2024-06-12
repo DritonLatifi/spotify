@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaPlay } from "react-icons/fa";
+import { FaCirclePlay} from "react-icons/fa6";
 
 export default function Song({ song }) {
   return (
@@ -21,7 +21,7 @@ export default function Song({ song }) {
         </div>
       </div>
       <div className="ml-auto flex items-center pr-[5%]">
-        <FaPlay size={25} onClick={() => console.log('play ' + song.title + ' clicked')}/>
+        <FaCirclePlay size={40} onClick={() => console.log('play ' + song.title + ' clicked')}/>
       </div>
     </div>
   );
