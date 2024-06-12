@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FaPlay } from "react-icons/fa";
 
 export default function Song({ song }) {
   return (
@@ -19,14 +20,9 @@ export default function Song({ song }) {
           <div className="text-base text-gray-800">{song.duration}</div>
         </div>
       </div>
-      <button className="ml-auto p-2 pr-[8%]" aria-label="Play">
-        <Image
-          src="/play-button.png"
-          height={45}
-          width={45}
-          alt="Play button"
-        />
-      </button>
+      <div className="ml-auto flex items-center pr-[5%]">
+        <FaPlay size={25} onClick={() => console.log('play ' + song.title + ' clicked')}/>
+      </div>
     </div>
   );
 }
