@@ -9,7 +9,7 @@ export async function GET(req) {
         method: 'POST',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic ' + btoa(process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET)
+            'Authorization': 'Basic ' + btoa(process.env.NEXT_PUBLIC_CLIENT_ID + ':' + process.env.NEXT_PUBLIC_CLIENT_SECRET)
         }
     })
 

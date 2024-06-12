@@ -4,7 +4,7 @@ const scopes = "streaming%20user-read-email%20user-read-private%20user-read-play
 export default function Home() {
   
   return (
-      <a href={`https://accounts.spotify.com/authorize?client_id=${process.env.CLIENT_ID}&scope=${scopes}&response_type=code&redirect_uri=${process.env.REDIRECT_URI}`}>
+      <a href={`https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=${scopes}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}`}>
         Spotify Login
       </a>
   )

@@ -11,8 +11,8 @@ let song = {
 }
 
 let image = {
-    src: "/vinyl.webp",
-    alt: "Description"
+    src: "/kendrick.webp",
+    alt: "Kendrick"
 }
 
 

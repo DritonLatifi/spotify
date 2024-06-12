@@ -2,6 +2,7 @@
 import Cookies from "cookies-js"
 import "@/app/globals.css"
 import SpotifyWebPlayer from "react-spotify-web-playback";
+import MusicPlayer from "@/components/musicPlayer";
 
 export default function RootLayout({ children }) {
   return (
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-background">
         {children}
-      <SpotifyWebPlayer token={Cookies.get("token")} uris={['spotify:artist:6HQYnRM4OzToCYPpVBInuU']} />
+      <MusicPlayer></MusicPlayer>
       </body>
     </html>
   );
