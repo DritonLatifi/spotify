@@ -15,11 +15,11 @@ export default function Home() {
 
     fetch('api/top-songs?limit=' + 10)
       .then(res => res.json())
-      .then(data => setPopular(data.items))
+      .then(data => setPopular(data))
 
     fetch('api/top-albums')
       .then(res => res.json())
-      .then(data => setAlbums(data.albums.items))
+      .then(data => setAlbums(data))
 
   }, [])
 
