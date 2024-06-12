@@ -6,7 +6,6 @@ import { getToken } from "./actions/token";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const dummyArray = new Array(5).fill('Kendrick Lamar')
   const [popular, setPopular] = useState([])
   const [albums, setAlbums] = useState([])
 
