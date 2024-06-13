@@ -11,7 +11,7 @@ export default function Home() {
       </header>
       <main className="flex-1 flex flex-col overflow-y-scroll">
         <div className="flex-1 min-h-screen">
-        <PlaylistContent />
+          <PlaylistContent />
         </div>
       </main>
       <footer>

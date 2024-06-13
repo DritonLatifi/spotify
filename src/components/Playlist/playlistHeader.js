@@ -12,6 +12,7 @@ const profile = [
 
 export default function PlaylistHeader() {
   const userProfile = profile[0];
+  
 
   return (
     <div className="bg-[#555268] flex items-center pb-[3%] pl-[5%] pt-[3%]">
@@ -26,9 +27,6 @@ export default function PlaylistHeader() {
         <h1>{userProfile.name}</h1>
       </div>
       <div className="ml-auto flex items-center pr-[5%]">
-        <button>
-          <IoMdAddCircle size={25} />
-        </button>
       </div>
     </div>
   );
