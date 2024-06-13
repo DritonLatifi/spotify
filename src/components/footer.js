@@ -15,3 +15,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+// Buttons don't do anything yet, don't know how to route
