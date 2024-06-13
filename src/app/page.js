@@ -1,7 +1,10 @@
+"use client"
+
 import Footer from "@/components/footer";
 import MusicPlayer from "@/components/musicPlayer";
 import SearchBar from "@/components/searchBar";
 import Categories from "@/components/categories";
+import Slider from "@/components/slider";
 
 import { getToken } from "./actions/token";
 import { useEffect, useState } from "react";
