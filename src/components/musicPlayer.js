@@ -2,6 +2,7 @@
 import {useEffect, useState} from "react";
 import { FaCirclePlay , FaCirclePause} from "react-icons/fa6";
 import { MdReplayCircleFilled } from "react-icons/md";
+import Cookies from "cookies-js"
 
 let song = {
     artist: "Kendrick Lamar",
@@ -28,6 +29,7 @@ export default function MusicPlayer(){
         }
     }
 
+
     useEffect(() => {
         let interval = null;
         if (isPlaying) {
@@ -40,16 +42,14 @@ export default function MusicPlayer(){
         return () => clearInterval(interval);
     }, [isPlaying, progress]);
 
-    
+
     useEffect(() => {
         if(progress == song.lengthInSeconds){
             setIsPlaying(false)
         }
     }, [progress])
 
-
-    return (
-        <div className={"mx-1 p-1 bg-lightgray rounded-xl"}>
+    const musiccontent = (<>
             <div className={"grid grid-cols-[50px,_1fr,_50px] items-center"}>
                 <img src={image.src} alt={image.alt} className={"w-full aspect-square block rounded-md"}/>
                 <div className={"font-bold ml-3"}>
@@ -58,16 +58,24 @@ export default function MusicPlayer(){
                 </div>
                 <div className="flex items-center justify-center" onTouchStart={pausePlay}>
                     {isPlaying ?
-                    <FaCirclePause  className="text-4xl"/>
+                        <FaCirclePause className="text-4xl"/>
 
-                    : progress === song.lengthInSeconds 
-                    ? <MdReplayCircleFilled className="text-5xl"/>
+                        : progress === song.lengthInSeconds
+                            ? <MdReplayCircleFilled className="text-5xl"/>
 
-                    : <FaCirclePlay  className="text-4xl"/>
+                            : <FaCirclePlay className="text-4xl"/>
                     }
                 </div>
             </div>
             <progress max={song.lengthInSeconds} className={"w-full h-2"} value={progress}></progress>
+        </>)
+
+    return (
+        <div className={"mx-1 p-1 bg-lightgray rounded-xl"}>
+            {!Cookies.get("token") ? <p>You need to be logged in to use the player</p> :
+                Cookies.get("tier") === "free" ? <p>You need a premium account to use the player</p> :
+                    musiccontent
+            }
         </div>
     )
 }
