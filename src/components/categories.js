@@ -17,7 +17,7 @@ export default function Categories() {
   const buttonClasses = (category) => {
     const isSelected = selected === category;
     return `rounded-full font-bold py-2 px-4 focus:outline-none transition-colors duration-300 ${
-      isSelected ? "bg-white text-black" : "bg-black text-white hover:bg-white hover:text-black"
+      isSelected ? "bg-white text-black" : "bg-black text-white"
     }`;
   };
 
