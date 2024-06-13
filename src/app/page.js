@@ -24,7 +24,6 @@ export default function Home() {
     fetch('api/top-playlists')
       .then(res => res.json())
       .then(data => setPlaylists(data))
-
   }, [])
 
   const scope = [
