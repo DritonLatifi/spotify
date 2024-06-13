@@ -44,11 +44,18 @@ export default function Home() {
     </div>
   }
 
+  const Login = () => {
+    return (
+      <a className="active:scale-90 transition-all bg-gradient-to-b from-black to-gray-800 text-white shadow-2xl font-bold text-2xl p-10 rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
+        href={`https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=${scope}&show_dialog=true`}>
+        Login
+      </a>
+    )
+  }
+
   return (
     <main className="bg-[#6B6783]">
-      {getToken() ? <Main /> : <a href={`https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=${scope}`}>
-        Spotify Login
-      </a>}
+      {getToken() ? <Main /> : <Login />}
     </main>
   )
 }
