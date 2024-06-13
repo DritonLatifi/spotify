@@ -6,7 +6,7 @@ export async function POST(req) {
 
     const searchParams = req.nextUrl.searchParams
 
-    cookieStore.set('token', searchParams.get('token'))
+    cookieStore.set('token', searchParams.get('token'), {maxAge: 3600})
 
     const res = await fetch("https://api.spotify.com/v1/me", {
         method: "GET",
