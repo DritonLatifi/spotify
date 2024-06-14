@@ -6,7 +6,7 @@ export default function Slider({ heading, arr }) {
     return (
         <article className="flex flex-col gap-4">
             <h2 className="font-bold text-3xl capitalize">{heading}</h2>
-            <div className="flex gap-2 overflow-x-scroll">
+            <div className="flex gap-2 overflow-x-scroll scrollbar-hide">
                 {arr && arr.map((item, index) => {
                     return (
                         <div key={index} className="min-w-[200px] text-center overflow-x-hidden">
