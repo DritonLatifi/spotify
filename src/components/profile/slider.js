@@ -17,8 +17,7 @@ export default function Slider({ heading, arr }) {
                                     height={100}
                                     width={100}
                                 />
-                                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <FaPlay size={30} className="text-[#555268]"/>
+                                <div className="absolute inset-0 flex items-center justify-center">
                                 </div>
                             </div>
                             <span className="font-bold text-lg whitespace-nowrap">{track.title}</span>

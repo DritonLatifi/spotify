@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa";
 
 export default function Song({ song }) {
   return (
-    <div className="flex items-center pb-[3%] pl-[5%] space-x-4 song-container hover:bg-[#555268] hover:bg-opacity-20">
+    <div className="flex items-center pb-[3%] pl-[5%] space-x-4 song-container">
       <div className="flex-shrink-0">
         <Image
           src={song.cover}
