@@ -47,14 +47,14 @@ export default function PlaylistContent() {
       };
       setPlaylists([...playlists, newPlaylist]);
       setNewPlaylistName("");
-      setShowAddPlaylistInput(false); // Hide input after adding playlist
+      setShowAddPlaylistInput(false);
     }
   };
 
   const currentPlaylists = sortedPlaylists.length > 0 ? sortedPlaylists : playlists;
 
   return (
-    <div className="space-y-4 pt-[5%]">
+    <div className="space-y-1 pt-[5%]">
       <div className="flex items-center pl-[5%]">
         <button onClick={toggleAddPlaylistInput}>
           <IoMdAddCircle size={30} />
