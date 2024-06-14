@@ -6,7 +6,6 @@ export default function Categories() {
   const [selected, setSelected] = useState("All");
 
   useEffect(() => {
-    console.log(`${selected} button is initially selected`);
   }, [selected]);
 
   const handleButtonClick = (category) => {

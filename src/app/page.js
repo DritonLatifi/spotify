@@ -56,7 +56,7 @@ export default function Home() {
 
   const Bottom = () => {
     return (
-      <footer>
+      <footer className="sticky bottom-0">
         <MusicPlayer />
         <Footer />
       </footer>
@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="bg-[#6B6783]">
+      <main className="bg-[#6B6783] min-h-screen flex flex-col justify-between">
         {getToken() ? <><Main /> <Bottom/></>  : <Login />}
       </main>
     </>

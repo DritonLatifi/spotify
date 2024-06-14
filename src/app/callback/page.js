@@ -13,8 +13,10 @@ export default function Callback({ searchParams }) {
                 console.log('Login Successful');
             }
         })
+        .finally(function() {
+            router.push('/')
+        })
 
-    router.push('/')
 
     return null
 }
