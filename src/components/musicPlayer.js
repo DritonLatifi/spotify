@@ -1,8 +1,8 @@
 "use client"
-import { useEffect, useState } from "react";
-import { FaCirclePlay, FaCirclePause } from "react-icons/fa6";
+import {useEffect, useState} from "react";
+import { FaCirclePlay , FaCirclePause} from "react-icons/fa6";
 import { MdReplayCircleFilled } from "react-icons/md";
-import Cookies from "cookies-js";
+import Cookies from "cookies-js"
 
 let song = {
     artist: "Kendrick Lamar",
@@ -12,21 +12,22 @@ let song = {
 
 let image = {
     src: "/kendrick.webp",
-    alt: "Description"
+    alt: "Kendrick"
 }
 
-export default function MusicPlayer() {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const [player, setPlayer] = useState(null);
 
-    function pausePlay() {
-        setIsPlaying(!isPlaying);
-        player.togglePlay();
+export default function MusicPlayer(){
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [progress, setProgress] = useState(0)
+    const [player, setPlayer] = useState(null)
 
-        if (progress === song.lengthInSeconds) {
-            setProgress(0);
-            setIsPlaying(true);
+    function pausePlay(){
+        setIsPlaying(!isPlaying)
+        player.togglePlay()
+
+        if(progress === song.lengthInSeconds){
+            setProgress(0)
+            setIsPlaying(true)
         }
     }
 
@@ -42,70 +43,70 @@ export default function MusicPlayer() {
         return () => clearInterval(interval);
     }, [isPlaying, progress]);
 
+    
     useEffect(() => {
-        if (progress === song.lengthInSeconds) {
-            setIsPlaying(false);
+        if(progress === song.lengthInSeconds){
+            setIsPlaying(false)
         }
-    }, [progress]);
+    }, [progress])
 
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://sdk.scdn.co/spotify-player.js";
-        script.async = true;
 
-        document.body.appendChild(script);
 
-        window.onSpotifyWebPlaybackSDKReady = () => {
-            console.log(Cookies.get("token"))
+useEffect(() => {
 
-            const player = new window.Spotify.Player({
-                name: 'Web Playback SDK',
-                getOAuthToken: cb => { cb(Cookies.get("token")); },
-                volume: 0.5
-            });
+    const script = document.createElement("script");
+    script.src = "https://sdk.scdn.co/spotify-player.js";
+    script.async = true;
 
-            setPlayer(player);
+    document.body.appendChild(script);
 
-            player.addListener('ready', ({ device_id }) => {
-                console.log('Ready with Device ID', device_id);
-            });
+    window.onSpotifyWebPlaybackSDKReady = () => {
 
-            player.addListener('not_ready', ({ device_id }) => {
-                console.log('Device ID has gone offline', device_id);
-            });
+        const player = new window.Spotify.Player({
+            name: 'Web Playback SDK',
+            getOAuthToken: cb => { cb(Cookies.get("token")); },
+            volume: 0.5
+        });
 
-            player.connect();
-        };
-    }, []);
+        setPlayer(player);
+
+        player.connect();
+    };
+}, []);
+
 
     return (
-        <div className="mx-1 p-1 bg-[#a6a3b4] rounded-xl">
-            <div className="grid grid-cols-[50px,_1fr,_50px] items-center">
-                <img src={image.src} alt={image.alt} className="w-full aspect-square block rounded-md" />
-                <div className="font-bold ml-3">
-                    <div className="text-xl">{song.artist}</div>
-                    <div className="text-xs">{song.title}</div>
+        <div className={"mx-1 p-1 bg-[#a6a3b4] rounded-xl"}>
+            <div className={"grid grid-cols-[50px,_1fr,_50px] items-center"}>
+                <img src={image.src} alt={image.alt} className={"w-full aspect-square block rounded-md"}/>
+                <div className={"font-bold ml-3"}>
+                    <div className={"text-xl"}>{song.artist}</div>
+                    <div className={"text-xs"}>{song.title}</div>
                 </div>
                 <div className="flex items-center justify-center" onTouchStart={pausePlay}>
                     {isPlaying ?
-                        <FaCirclePause className="text-4xl" />
-                        : progress === song.lengthInSeconds
-                            ? <MdReplayCircleFilled className="text-5xl" />
-                            : <FaCirclePlay className="text-4xl" />
+                    <FaCirclePause  className="text-4xl"/>
+
+                    : progress === song.lengthInSeconds 
+                    ? <MdReplayCircleFilled className="text-5xl"/>
+
+                    : <FaCirclePlay  className="text-4xl"/>
                     }
                 </div>
             </div>
-            <progress max={song.lengthInSeconds} className="w-full h-2 progress-bar" value={progress}></progress>
+            <div className="flex justify-center pt-[1%]">
+            <progress max={song.lengthInSeconds} className="w-[75%] h-2 progress-bar" value={progress}></progress>
             <style jsx>{`
                 .progress-bar {
                     appearance: none;
+                    margin: auto;
                 }
                 .progress-bar::-webkit-progress-bar {
                     background-color: white;
                     border-radius: 10px;
                 }
                 .progress-bar::-webkit-progress-value {
-                    background-color: #555268;
+                    background-color: #403d4e;
                     border-radius: 10px;
                 }
                 .progress-bar::-moz-progress-bar {
@@ -113,6 +114,7 @@ export default function MusicPlayer() {
                     border-radius: 10px;
                 }
             `}</style>
+            </div>
         </div>
-    );
+    )
 }
