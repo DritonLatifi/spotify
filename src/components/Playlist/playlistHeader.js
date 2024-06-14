@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-// Profile data, static, can get this from API?
+// Profile data, static, get from API
 const profile = 
   {
     name: "Yorick",

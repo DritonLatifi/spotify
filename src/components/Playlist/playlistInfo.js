@@ -8,7 +8,7 @@ import { FaSortAlphaDown } from "react-icons/fa";
 const initialPlaylists = [
   {
     id: 1,
-    title: "zUMBLE.",
+    title: "HUMBLE.",
     created: "11-6-2024",
     cover: "/kendrick.webp",
     songs: "4"
