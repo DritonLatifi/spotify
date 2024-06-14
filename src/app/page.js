@@ -42,15 +42,24 @@ export default function Home() {
 
   const Main = () => {
     return (
-    <>
-      <SearchBar />
-      <Categories />
-      <div className="flex flex-col gap-6 pl-4 pt-4">
-        <Slider heading={'songs'} arr={popular} />
-        <Slider heading={'albums'} arr={albums} />
-        <Slider heading={'playlists'} arr={playlists} />
-      </div>
-    </>
+      <>
+        <SearchBar />
+        <Categories />
+        <div className="flex flex-col gap-6 pl-4 pt-4">
+          <Slider heading={'songs'} arr={popular} />
+          <Slider heading={'albums'} arr={albums} />
+          <Slider heading={'playlists'} arr={playlists} />
+        </div>
+      </>
+    )
+  }
+
+  const Bottom = () => {
+    return (
+      <footer>
+        <MusicPlayer />
+        <Footer />
+      </footer>
     )
   }
 
@@ -66,12 +75,8 @@ export default function Home() {
   return (
     <>
       <main className="bg-[#6B6783]">
-        {getToken() ? <Main /> : <Login />}
+        {getToken() ? <><Main /> <Bottom/></>  : <Login />}
       </main>
-      <footer>
-        <MusicPlayer />
-        <Footer />
-      </footer>
     </>
   )
 }
